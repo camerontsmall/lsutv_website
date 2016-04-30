@@ -1,6 +1,6 @@
  <!-- Meta fields -->
 <meta charset="UTF-8" />
-<title>LSUTV</title>
+<title><?php echo ($pagetitle)? $pagetitle : "LSUTV"; ?></title>
 
 <!-- Fonts -->
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

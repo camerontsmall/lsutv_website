@@ -19,7 +19,7 @@
                         <img src="res/lsutv_white.png" alt="LSUTV Logo" id="tv-logo"  />
                     </a>
                     <ul class="right hide-on-med-and-down">
-                        <?php if($pagetitle != "search"){  ?>
+                        <?php if($pagename != "search"){  ?>
                         <li><a href="./search"><i class="material-icons left">search</i>Search</a></li>   
                         <?php } ?>
                         <!-- <li><a href="#!">Live</a></li> -->

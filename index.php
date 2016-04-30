@@ -2,7 +2,7 @@
 <html>
     <head>
        <?php 
-            $pagetitle = "index";
+            $pagename = "index";
             require("components/header.php"); 
         ?>
     </head>

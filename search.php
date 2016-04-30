@@ -2,7 +2,8 @@
 <html>
     <head>
         <?php 
-            $pagetitle = "search";
+            $pagename = "search";
+            $pagetitle = "LSUTV - Search";
             require("components/header.php"); 
         ?>
     </head>
