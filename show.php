@@ -43,10 +43,11 @@
                 </div>
                
             </div>
+            <?php if(count($show['episodes']) > 0){ ?>
             <div class="row">
                 <div class="col"><h4>Episodes</h4></div>
             </div>
-            
+            <?php } ?>
             <div class="row">
                 <div class="col s12">
                     <?php
