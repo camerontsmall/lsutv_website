@@ -4,6 +4,7 @@
         <?php 
             $pagename = "search";
             $pagetitle = "LSUTV - Search";
+            require_once("config.php");
             require("components/header.php"); 
         ?>
     </head>
@@ -17,7 +18,7 @@
         
         <!-- Content section -->
        <div class="container" id="main-content">
-           <div class="row">
+            <div class="row">
                <div class="column s12">
                    <nav id="search-container" class="red lighten-1">
                    <form action="" method="GET">
@@ -27,13 +28,31 @@
                    </form>
                    </nav>
                </div>
-           </div>
+            </div>
+               
+            <div class="row" id="search-results">
+                <?php
+
+                $api_url_s = $config['publicphp'] . '?action=plugin_vod&tag=' . $term;
+                $results = json_decode(file_get_contents($api_url_s),1);
+
+                foreach($results as $index => $result){
+                    ?>
+                <div class="col s12 m6 l3">
+                    <div class="card-panel hoverable" onclick="window.location.href='./video?play=<?= $result['id'] ?>';">
+                        <div class="video-container" style="background-image:url('<?= $result['poster'] ?>');">
+                        </div>
+                        <!-- <div class="card-title"><?= $result['title'] ?></div> -->
+                    </div>
+                </div>
+                <?php
+                }
+
+                ?>
+            </div>
         </div>
         
-        <script>
-            $(document).ready(function(){
-                $(".dropdown-button").dropdown();
-            });
-        </script>
+        <?php require("components/footer.php"); ?>
+           
     </body>
 </html>

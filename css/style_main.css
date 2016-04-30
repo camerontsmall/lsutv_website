@@ -15,11 +15,20 @@ iframe {
   height: 48px;
   margin: 8px; }
 
+.video-container {
+  background-size: cover; }
+
 #main-content {
-  margin-top: 4em; }
+  margin-top: 2em; }
 
 #player-container {
   background-color: black; }
+
+#player-description {
+  margin-top: 0.5rem; }
+
+#player-tags {
+  margin-top: 0.5rem; }
 
 #player-playlist {
   margin-top: -0.5rem; }
