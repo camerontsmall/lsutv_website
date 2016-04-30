@@ -11,6 +11,10 @@ iframe{
     margin-bottom:0;
 }
 
+.pointer{
+    cursor:pointer;
+}
+
 #main-nav{
     background-color:#EC2228;
 }
@@ -52,4 +56,8 @@ iframe{
 
 .playlist-item{
     cursor:pointer;
+}
+
+.search-result-title{
+    font-size: 1.5em;
 }

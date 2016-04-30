@@ -24,8 +24,8 @@
                $publicphp = $config['publicphp'];
                $shows = json_decode(file_get_contents($publicphp . '?action=shows&r=list'),true);
                foreach($shows as $show){
-                    $more = json_decode(file_get_contents($publicphp . '?action=shows&r=show&id=' . $show['id']),true);
-                    if(count($more['episodes']) > 0){
+                    //$more = json_decode(file_get_contents($publicphp . '?action=shows&r=show&id=' . $show['id']),true);
+                    //if(count($more['episodes']) > 0){
                     $show['poster_url'] = ($show['poster_url'])? $show['poster_url'] : $config['filler_image'];
                     ?>
                     <div class="show-container col s12 m6 l4">
@@ -47,7 +47,7 @@
                          </div>
                      </div>
                <?php
-                    }
+                    //}
                }
                ?>
            </div>

@@ -124,8 +124,8 @@
                         foreach($related as $result){
                             if($counter < 6 && $result['id'] != $playing){
                         ?>
-                        <div class="card-panel hoverable grey lighten-5 z-depth-1 playlist-item"
-                             onclick="window.location.href='./video?play=<?= $result['id'] ?>';">
+                        <div class="card-panel hoverable grey lighten-5 z-depth-1 playlist-item" >
+                            <a href="./video?play=<?= $result['id'] ?>">
                             <div class="row valign-wrapper">
                                 <div class="col s3">
                                 <img src="<?= $result['poster'] ?>" alt="" class="responsive-img left" />
@@ -137,6 +137,7 @@
                                 </div>
                               
                             </div>
+                            </a>
                         </div>
                         <?php 
                             $counter++;

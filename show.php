@@ -32,42 +32,45 @@
                         </div>
                         <div id="player-important" class="card-content">
                             <div id="player-title" class="card-title"><?= $show['title'] ?></div>
-                            <p><?= $show['description'] ?></p>
+                            
                         </div>
                        </div>
                 </div>
                 <div class="col s12 l4">
-                    <div id="player-playlist">
-                        <?php
-                        foreach($show['episodes'] as $episode){
-                         
-                            ?>
-                         <div class="card-panel hoverable grey lighten-5 z-depth-1 playlist-item"
-                              onclick="window.location.href='./video?play=<?= $episode['id'] ?>';">
-                            <div class="row valign-wrapper">
-                              <div class="col s2">
-                                <img src="<?= $episode['poster'] ?>" alt="" class="responsive-img" />
-                              </div>
-                              <div class="col s10">
-                                <span class="black-text card-title">
-                                  <?= $episode['title'] ?>
-                                </span>
-                              </div>
-                            </div>
-                        </div>
-                        <?php
-                            
-                            
-                        }
-                        ?>
-                       
-                        
-                        
+                    <div id="show-description" class="card-panel">
+                        <p><?= $show['description'] ?></p>
                     </div>
                 </div>
                
             </div>
+            <div class="row">
+                <div class="col"><h4>Episodes</h4></div>
+            </div>
+            
+            <div class="row">
+                <div class="col s12">
+                    <?php
+                    foreach($show['episodes'] as $result){
+                    ?>
+                    <div class="col s12 m6 l3">
+                        <div class="card small hoverable pointer">
+                            <a href="./video?play=<?= $result['id'] ?>">
+                            <div class="card-image">
+                                <div class="video-container" style="background-image:url('<?= $result['poster'] ?>');"></div>
+                            </div>
+                            <div class="card-content">
+                                <div class="search-result-title black-text"><?= $result['title'] ?></div>
+                            </div>
+                            <!-- <div class="card-title"><?= $result['title'] ?></div> -->
+                            </a>
+                        </div>
+                    </div>
+                    <?php
+                    }
 
+                    ?>
+                </div>
+            </div>
         </div>
         
         <?php require("components/footer.php"); ?>

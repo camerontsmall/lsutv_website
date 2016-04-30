@@ -39,10 +39,16 @@
                 foreach($results as $index => $result){
                     ?>
                 <div class="col s12 m6 l3">
-                    <div class="card-panel hoverable" onclick="window.location.href='./video?play=<?= $result['id'] ?>';">
-                        <div class="video-container" style="background-image:url('<?= $result['poster'] ?>');">
+                    <div class="card small hoverable pointer">
+                        <a href="./video?play=<?= $result['id'] ?>">
+                        <div class="card-image">
+                            <div class="video-container" style="background-image:url('<?= $result['poster'] ?>');"></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="search-result-title black-text"><?= $result['title'] ?></div>
                         </div>
                         <!-- <div class="card-title"><?= $result['title'] ?></div> -->
+                        </a>
                     </div>
                 </div>
                 <?php
