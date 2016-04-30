@@ -24,7 +24,7 @@
                         <?php } ?>
                         <!-- <li><a href="#!">Live</a></li> -->
                         <li><a class="dropdown-button" href='#!' data-activates="cosec-dropdown">Categories</a></li>
-                        <li><a href='#!'>Shows</a></li>
+                        <li><a href='./shows'>Shows</a></li>
                         <!-- Dropdown Trigger -->
                         <li><a class="dropdown-button" href="#!" data-activates="more-dropdown">More<i class="material-icons right">arrow_drop_down</i></a></li>
                     </ul>

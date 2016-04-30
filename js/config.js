@@ -4,3 +4,5 @@ var config  = {
     
 }
 
+console.log("Loaded configuration");
+
