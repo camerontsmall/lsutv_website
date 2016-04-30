@@ -19,15 +19,14 @@
            <div class="row">
                <div class="column s12">
                    <nav id="search-container" class="red lighten-1">
-                   <form>
+                   <form action="" method="GET">
                        <div class="input-field">
-                        <input id="search-bar" type="search" required value="<?= $term ?>">
+                        <input id="search-bar" name="term" type="search" required value="<?= $term ?>">
                         <label for="search"><i class="material-icons">search</i></label>
                    </form>
                    </nav>
                </div>
            </div>
-            
         </div>
         
         <script>
