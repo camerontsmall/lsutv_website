@@ -1,11 +1,14 @@
 <!doctype html>
 <html>
     <head>
-       <?php require("php/header.php"); ?>
+       <?php 
+            $pagetitle = "index";
+            require("components/header.php"); 
+        ?>
     </head>
     <body>
         <!-- Navigation section -->
-        <?php require("php/nav.php"); ?>
+        <?php require("components/nav.php"); ?>
         
         <!-- Content section -->
        <div class="container" id="main-content">
