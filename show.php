@@ -25,22 +25,32 @@
             
             <!-- Player & playlist -->
             <div class="row">
-                <div class="col s12 l8">
-                    <div id="player-info" class="card">
+                
+                <div class="col s12 l4">
+                    
+                    <div id="show-description" class="card">
                         <div class="card-image">
                             <img src="<?= $show['poster_url'] ?>" />
                         </div>
-                        <div id="player-important" class="card-content">
+                        <div class="card-content">
                             <div id="player-title" class="card-title"><?= $show['title'] ?></div>
-                            
+                            <p><?= $show['description'] ?></p>
                         </div>
-                       </div>
-                </div>
-                <div class="col s12 l4">
-                    <div id="show-description" class="card-panel">
-                        <p><?= $show['description'] ?></p>
                     </div>
                 </div>
+                
+                <?php
+                if($current_episode){
+                    ?>
+                <div class="col s12 l8">
+                    <div class="video-container z-depth-1">
+                        <iframe src="<?= $config['publicphp'] . '?action=plugin_vod&iframe=' . $current_episode['id'] ?>">
+                        Your browser doesn't support iframes. We feel very sorry for you.
+                        </iframe>
+                </div>
+                    <?php
+                }
+                ?>
                
             </div>
             <?php if(count($show['episodes']) > 0){ ?>
