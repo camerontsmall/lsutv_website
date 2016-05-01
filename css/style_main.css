@@ -2,6 +2,14 @@
     Created on : 30-Apr-2016, 11:51:03
     Author     : Cameron Small
 */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+main {
+  flex: 1 0 auto; }
+
 iframe {
   border: none; }
 
@@ -41,5 +49,12 @@ iframe {
 
 .search-result-title {
   font-size: 1.5em; }
+
+#footer {
+  background-color: #EC2228; }
+
+#footer-logo {
+  height: 100px;
+  margin-top: -20px; }
 
 /*# sourceMappingURL=style_main.css.map */

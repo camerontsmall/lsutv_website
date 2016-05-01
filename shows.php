@@ -17,7 +17,7 @@
         ?>
         
         <!-- Content section -->
-       <div class="container" id="main-content">
+       <main class="container" id="main-content">
            <div class="row"><div class="col s12"><h4>Shows</h4></div></div>
            <div class="row" id="show-results">
                <?php
@@ -33,7 +33,9 @@
                         <div class="show-container col s12 m6 l4">
                              <div class="card medium hoverable">
                                   <div class="card-image waves-effect waves-block waves-light">
+                                      <div class="video-container">
                                       <img class="activator" src="<?= $show['poster_url'] ?>">
+                                      </div>
                                   </div>
                                  <div class="card-content">
                                       <div class="card-title activator"><?= $show['title'] ?><i class="material-icons right">more_vert</i></div>
@@ -54,7 +56,7 @@
                }
                ?>
            </div>
-        </div>
+       </main>
         
         <?php require("components/footer.php"); ?>
         

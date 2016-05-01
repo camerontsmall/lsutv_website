@@ -13,10 +13,15 @@
         <?php require("components/nav.php"); ?>
         
         <!-- Content section -->
-        <div class="container" id="main-content">
-            
-          
-        </div>
+        <main class="container" id="main-content">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card-panel red white-text">
+                        <p>This site does not use cookies! Please find your confectionary elsewhere.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
         
         <?php require("components/footer.php"); ?>
         

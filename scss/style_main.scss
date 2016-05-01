@@ -3,6 +3,18 @@
     Author     : Cameron Small
 */
 
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main{
+    flex: 1 0 auto;
+}
+
+
+
 iframe{
     border:none;
 }
@@ -18,6 +30,8 @@ iframe{
 #main-nav{
     background-color:#EC2228;
 }
+
+
 
 #search-container{
     //background-color:#EC2228;
@@ -60,4 +74,13 @@ iframe{
 
 .search-result-title{
     font-size: 1.5em;
+}
+
+#footer{
+    background-color:#EC2228;
+}
+
+#footer-logo{
+    height:100px;
+    margin-top:-20px;
 }

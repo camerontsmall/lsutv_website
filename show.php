@@ -21,11 +21,11 @@
         ?>
         
          <!-- Content section -->
-        <div class="container" id="main-content">
+        <main class="container" id="main-content">
             
             <!-- Player & playlist -->
             <div class="row">
-                <div class="col s12 l6">
+                <div class="col s12 l8">
                     <div id="player-info" class="card">
                         <div class="card-image">
                             <img src="<?= $show['poster_url'] ?>" />
@@ -72,7 +72,7 @@
                     ?>
                 </div>
             </div>
-        </div>
+        </main>
         
         <?php require("components/footer.php"); ?>
         

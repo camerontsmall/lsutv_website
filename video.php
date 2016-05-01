@@ -41,7 +41,7 @@
         <?php require("components/nav.php"); ?>
         
         <!-- Content section -->
-       <div class="container" id="main-content">
+       <main class="container" id="main-content">
             
             <!-- Player & playlist -->
             <div class="row">
@@ -151,7 +151,7 @@
                
             </div>
 
-        </div>
+        </main>
         
         <?php require("components/footer.php"); ?>
         
