@@ -1,3 +1,8 @@
+<?php
+if(!isset($_GET['id'])){
+    header('location:./shows');
+}
+?>
 <!doctype html>
 <html>
     <head>
@@ -12,6 +17,10 @@
         <!-- Navigation section -->
         <?php require("components/nav.php"); ?>
         
+        
+         <!-- Content section -->
+        <main class="container" id="main-content">
+        
         <?php
         $show_id = $_GET['id'];
         $api_url = $config['publicphp'] . '?action=shows&r=show&id=' . $show_id;
@@ -20,8 +29,7 @@
         $current_episode = $show['episodes'][0];
         ?>
         
-         <!-- Content section -->
-        <main class="container" id="main-content">
+        
             
             <!-- Player & playlist -->
             <div class="row">
@@ -83,7 +91,10 @@
                 </div>
             </div>
         </main>
+         
         
+        
+         
         <?php require("components/footer.php"); ?>
         
     </body>
