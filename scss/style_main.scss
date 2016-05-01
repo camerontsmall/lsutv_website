@@ -84,3 +84,9 @@ iframe{
     height:100px;
     margin-top:-20px;
 }
+
+@media(max-width:600px){
+    #tv-logo{
+        height:40px;
+    }
+}

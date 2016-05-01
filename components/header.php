@@ -5,6 +5,12 @@
 <!-- Fonts -->
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/res/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/res/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/res/favicon-16x16.png">
+<link rel='shortcut icon' href='res/favicon.ico' type='image/x-icon'/ >
+
 <!-- Styles -->
 <link href="css/materialize.css" rel="stylesheet" />
 <link href="css/style_main.css" rel="stylesheet" />
