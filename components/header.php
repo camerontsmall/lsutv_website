@@ -26,4 +26,4 @@
 <meta name="msapplication-navbutton-color" content="#EC2228">
 <meta name="apple-mobile-web-app-status-bar-style" content="#EC2228">
 
-<meta name="viewport" content="width=device-width, user-scalable=no" /><link rel="icon" href="images/lcr_web_notext.ico" sizes="16x16" type="image/vnd.microsoft.icon">
+<meta name="viewport" content="width=device-width, user-scalable=no" />

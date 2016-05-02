@@ -6,10 +6,12 @@
                     <img class="responsive-img" id="footer-logo" src="res/media_reverse.png" />
                 </a>
             </div>
-            <div class="col l4 s12 white-text">
-                <!-- todo: come up with something not lame to write here -->
-                <!-- <h5>See content from the other sections of LSU Media</h5> -->
-                
+            <div class="col l4 s12 white-text" id="footer-section-logos">
+                <!--
+                <a href="//radio.lsu.co.uk"><img src='res/LCR.png'></a>
+                <a href="//media.lsu.co.uk"><img src='res/Label.png'></a>
+                <a href="//media.lsu.co.uk"><img src='res/Lens.png'></a>
+                -->
             </div>
             <div class="col l3 s12 right">
               <h5 class="white-text">Links</h5>

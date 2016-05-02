@@ -34,7 +34,7 @@
                 <?php
                 
                 if(strlen($term) > 0){
-                    $api_url_s = $config['publicphp'] . '?action=plugin_vod&search=' . urlencode($term);
+                    $api_url_s = $config['publicphp'] . '?action=plugin_vod&search=' . urlencode($term) . '&limit=100';
                     $results = json_decode(file_get_contents($api_url_s),1);
 
                     foreach($results as $index => $result){

@@ -20,7 +20,7 @@
 <div class="slider">
     <ul class="slides z-depth-1">
       <?php
-      $api_url_f = $config['publicphp'] . '?action=plugin_vod&tag=featured';
+      $api_url_f = $config['publicphp'] . '?action=plugin_vod&tag=featured&limit=7';
       $featured = json_decode(file_get_contents($api_url_f), true);
       
       foreach($featured as $result){

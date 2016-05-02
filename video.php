@@ -46,8 +46,8 @@
             <!-- Player & playlist -->
             <div class="row">
                 <div class="col s12 l8">
-                    <div id="player-container" class="video-container  z-depth-1">
-                        <iframe allowfullscreen src="<?= $iframe_url ?>"></iframe>
+                    <div id="player-container" class="z-depth-1 player-container">
+                        <iframe class="player-inner" allowfullscreen src="<?= $iframe_url ?>"></iframe>
                     </div>
                     <div id="player-info" class="card">
                         <div id="player-important" class="card-content">
@@ -107,12 +107,12 @@
                         }
                     }
                     
-                    $related = json_decode(file_get_contents($config['publicphp'] . '?action=plugin_vod&tag=' . $relatedtag),true);
+                    $related = json_decode(file_get_contents($config['publicphp'] . '?action=plugin_vod&limit=7&tag=' . $relatedtag),true);
                     
                     if(count($related) > 1 && strlen($relatedtag) > 0){
                         $rtitle = "Related videos";
                     }else{
-                        $related = json_decode(file_get_contents($config['publicphp'] . '?action=plugin_vod&list'),true);
+                        $related = json_decode(file_get_contents($config['publicphp'] . '?action=plugin_vod&limit=7&list'),true);
                         $rtitle = "Recent videos";
                     }
                     
