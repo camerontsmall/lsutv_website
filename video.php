@@ -155,5 +155,12 @@
         
         <?php require("components/footer.php"); ?>
         
+        <?php if(true){ ?>
+        <script>
+            var json_url = "<?= $api_url ?>";
+            updateVideoInformation(json_url);
+            var infotimer = setInterval(function(){ updateVideoInformation(json_url); }, 10000);
+        </script>
+        <?php } ?>
     </body>
 </html>

@@ -50,7 +50,7 @@ if(!isset($_GET['id'])){
                 <?php
                 if($current_episode){
                     ?>
-                <div class="col s12 l8">
+                <div class="col s12 l8 hide-on-med-and-down">
                     <div class="video-container z-depth-1">
                         <iframe src="<?= $config['publicphp'] . '?action=plugin_vod&iframe=' . $current_episode['id'] ?>">
                         Your browser doesn't support iframes. We feel very sorry for you.

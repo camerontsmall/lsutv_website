@@ -60,6 +60,7 @@
             </div>
         </main>
         <script>$("#search-bar").focus();</script>
+        
         <?php require("components/footer.php"); ?>
            
     </body>
