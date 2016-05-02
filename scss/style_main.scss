@@ -137,6 +137,12 @@ overflow:hidden;
     display:inline-block;
 }
 
+/* Player container special adjustments */
+
+.spotify-container:after{
+  padding-top:109.45%;
+}
+
 @media(max-width:600px){
     #tv-logo{
         height:40px;

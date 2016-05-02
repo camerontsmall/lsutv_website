@@ -46,8 +46,8 @@
             <!-- Player & playlist -->
             <div class="row">
                 <div class="col s12 l8">
-                    <div id="player-container" class="z-depth-1 player-container">
-                        <iframe class="player-inner" allowfullscreen src="<?= $iframe_url ?>"></iframe>
+                    <div id="player-container" class="z-depth-1 player-container <?= $content['type'] ?>-container">
+                        <iframe class="player-inner <?= $content['type'] ?>" allowfullscreen src="<?= $iframe_url ?>"></iframe>
                     </div>
                     <div id="player-info" class="card">
                         <div id="player-important" class="card-content">
