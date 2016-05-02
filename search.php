@@ -34,7 +34,7 @@
                 <?php
                 
                 if(strlen($term) > 0){
-                    $api_url_s = $config['publicphp'] . '?action=plugin_vod&tag=' . $term;
+                    $api_url_s = $config['publicphp'] . '?action=plugin_vod&search=' . urlencode($term);
                     $results = json_decode(file_get_contents($api_url_s),1);
 
                     foreach($results as $index => $result){
@@ -59,7 +59,7 @@
                 ?>
             </div>
         </main>
-        
+        <script>$("#search-bar").focus();</script>
         <?php require("components/footer.php"); ?>
            
     </body>
