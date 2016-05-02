@@ -8,8 +8,17 @@ if(!isset($_GET['id'])){
     <head>
         <?php 
             $pagename = "show";
-            $pagetitle = "LSUTV - Show";
+            
+            
+            
+            
             require_once("config.php");
+            
+             $show_id = $_GET['id'];
+            $api_url = $config['publicphp'] . '?action=shows&r=show&id=' . $show_id;
+            $show = json_decode(file_get_contents($api_url),true);
+            $pagetitle = "LSUTV - " . $show['title'];
+            
             require("components/header.php"); 
         ?>
     </head>
@@ -22,9 +31,7 @@ if(!isset($_GET['id'])){
         <main class="container" id="main-content">
         
         <?php
-        $show_id = $_GET['id'];
-        $api_url = $config['publicphp'] . '?action=shows&r=show&id=' . $show_id;
-        $show = json_decode(file_get_contents($api_url),true);
+       
         
         $current_episode = $show['episodes'][0];
         ?>

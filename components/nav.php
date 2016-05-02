@@ -16,10 +16,13 @@
 <div class="navbar-fixed">
     <nav>
         <!-- Desktop nav bar -->
-        <div class="nav-wrapper fixed" id="main-nav">
+        <div class="nav-wrapper fsaxied" id="main-nav">
            <div class="container">
                 <a href="." class="brand-logo">
                     <img src="res/lsutv_white.png" alt="LSUTV Logo" id="tv-logo"  />
+                </a>
+                <a class="hide-on-large-only button-collapse" data-activates="mobile-nav">
+                    <i class="material-icons">menu</i>
                 </a>
                 <ul class="right hide-on-med-and-down">
                     <?php if($pagename != "search"){  ?>
@@ -31,7 +34,20 @@
                     <!-- Dropdown Trigger -->
                     <li><a class="dropdown-button" href="#!" data-activates="more-dropdown">More<i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>
-               </div>
+            </div>
+            <ul class="side-nav" id="mobile-nav">
+                <li><a href=".">Home</a></li>
+                <li><a href="./search">Search</a></li>
+                <li><a href="./shows">Shows</a></li>
+                <li class="divider"></li>
+                 <li><a href="./search?term=entertainment">Entertainment</a></li>
+                <li><a href="./search?term=news">News</a></li>
+                <li><a href="./search?term=music">Music</a></li>
+                <li><a href="./search?term=sport">Sport</a></li>
+                <li class="divider"></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+          </ul>
         </div>
 
     </nav>
