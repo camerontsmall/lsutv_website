@@ -47,7 +47,7 @@
             <div class="row">
                 <div class="col s12 l8">
                     <div id="player-container" class="video-container  z-depth-1">
-                        <iframe src="<?= $iframe_url ?>"></iframe>
+                        <iframe allowfullscreen src="<?= $iframe_url ?>"></iframe>
                     </div>
                     <div id="player-info" class="card">
                         <div id="player-important" class="card-content">

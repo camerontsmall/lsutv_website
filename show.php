@@ -69,7 +69,9 @@ if(!isset($_GET['id'])){
             <div class="row">
                 <div class="col s12">
                     <?php
-                    foreach($show['episodes'] as $result){
+                    $api_url_e = $config['publicphp'] . '?action=plugin_vod&tag=' . $show['tag'];
+                    $episodes = json_decode(file_get_contents($api_url_e),true);
+                    foreach($episodes as $result){
                     ?>
                     <div class="col s12 m6 l3">
                         <div class="card small hoverable pointer">
