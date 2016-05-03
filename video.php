@@ -51,6 +51,7 @@
                     </div>
                     <div id="player-info" class="card">
                         <div id="player-important" class="card-content">
+                            <div id="player-channel-title"><?= $content['channel_name'] ?></div>
                             <div id="player-title" class="card-title activator"><?= $content['title'] ?></div>
                             <?php
                             if($is_vod){
