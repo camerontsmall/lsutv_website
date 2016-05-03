@@ -86,7 +86,6 @@
                     $printedLT = false;
                     
                     foreach($channels as $video){
-                        if($video['type'] == "live"){
                             if(!$printedLT){
                                 echo "<h5>Live Now</h5>";
                                 $printedLT = true;
@@ -104,7 +103,6 @@
                                </div>
                            </div>
                     <?php
-                        }
                     }
                     
                     $related = json_decode(file_get_contents($config['publicphp'] . '?action=plugin_vod&limit=7&tag=' . $relatedtag),true);

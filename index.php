@@ -75,17 +75,17 @@
                 
                     foreach($channels as $index => $result){
                         /* TODO - THIS NEEDS TO BE ASYNCHRONOUS! */ 
-                        $api_url_i = $config['publicphp'] . '?action=plugin_videomanager&id=' . $result['id'];
-                        $channel = json_decode(file_get_contents($api_url_i),true);
+                        //$api_url_i = $config['publicphp'] . '?action=plugin_videomanager&id=' . $result['id'];
+                        //$channel = json_decode(file_get_contents($api_url_i),true);
                         ?>
                     <div class="col s12 m6 l3">
                         <div class="card small hoverable pointer">
                             <a href="./video?play=-<?= $result['id'] ?>">
                             <div class="card-image">
-                                <div class="video-container" style="background-image:url('<?= $channel['poster'] ?>');"></div>
+                                <div class="video-container" style="background-image:url('<?= $result['thumbnail'] ?>');"></div>
                             </div>
                             <div class="card-content">
-                                <div class="search-result-title black-text"><?= $channel['title'] ?></div>
+                                <div class="search-result-title black-text"><?= $result['title'] ?></div>
                             </div>
                             <!-- <div class="card-title"><?= $channel['title'] ?></div> -->
                             </a>
