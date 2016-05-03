@@ -74,7 +74,7 @@
                 <?php
                 
                     foreach($channels as $index => $result){
-                        
+                        /* TODO - THIS NEEDS TO BE ASYNCHRONOUS! */ 
                         $api_url_i = $config['publicphp'] . '?action=plugin_videomanager&id=' . $result['id'];
                         $channel = json_decode(file_get_contents($api_url_i),true);
                         ?>
