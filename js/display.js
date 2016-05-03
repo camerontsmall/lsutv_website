@@ -28,3 +28,84 @@ function updateVideoInformation(json_url){
                 }
             });
 }
+
+function updateChannelPanes(){
+    /* For homepage channel panes */
+    json_url = config['publicphp'] + '?action=plugin_videomanager&list'; 
+    $.ajax({
+                url: json_url,
+                type : 'GET',
+                contentType: 'application/json',
+                success: function(data){
+                    data = JSON.parse(data);
+                    var channelpanec = document.getElementById("live-channels");
+                      
+                    for(n in data){
+                        
+                        var channel = data[n];
+                        var cid = channel['id'];
+                        var json_url_2 = config['publicphp'] + '?action=plugin_videomanager&id=' + cid;
+                        
+                        $.ajax({
+                            url: json_url_2,
+                            type : 'GET',
+                            contentType: 'application/json',
+                            success: function(data){
+                                
+                                var info = JSON.parse(data);
+                                
+                                var pane_id = 'channel_pane_' + info['channelID'];
+                                
+                                var container = document.createElement('div');
+                                
+                                container.id = pane_id;
+                                container.className = "col s12 m6 l3 channel-pane";
+                                
+                                var html = '<div class="card small hoverable pointer">\
+                                        <a href="./video?play=-' + info['channelID'] + '">\
+                                        <div class="card-image">\
+                                            <div class="video-container" style="background-image:url(\'' + info['poster'] + '\');"></div>\
+                                        </div>\
+                                        <div class="card-content">\
+                                            <div class="search-result-title black-text">' + info['channel_name'] + '</div>\
+                                            <div class="search-result-subtitle black-text">' + info['title'] + '</div>\
+                                        </div>\
+                                        </a>\
+                                    </div>';
+                                
+                                if(document.getElementById(pane_id)){
+                                    var pane = document.getElementById(pane_id);
+                                    pane.innerHTML = html;
+                                }else{
+                                    container.innerHTML = html;
+                                    channelpanec.appendChild(container);
+                                }
+                            }
+                        });
+                        
+                    }
+                    
+                    var panes = document.getElementsByClassName('channel-pane');
+                    /* Set/unset pane visibility based on status */
+                    for(p in panes){
+                        var pane = panes[p];
+                        var isLive = false;
+                        var id = pane.id;
+                        
+                        for(n in data){
+                            var checkId = 'channel_pane_' + data[n]['id'];
+                            if(checkId == id){
+                                isLive = true;
+                            }
+                        }
+                        
+                        if(isLive){
+                            pane.style.display = "block";
+                        }else{
+                            pane.style.display = "none";
+                        }
+                        
+                    }
+                }
+            });
+}
