@@ -25,6 +25,9 @@ iframe {
 .readable {
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4); }
 
+.italic {
+  font-style: italic; }
+
 #main-nav {
   background-color: #EC2228; }
 
@@ -37,6 +40,9 @@ iframe {
 
 #main-content {
   margin-top: 2em; }
+
+.channel-nowplaying {
+  white-space: nowrap; }
 
 .player-container {
   background-color: black;

@@ -1,11 +1,11 @@
 <!-- Dropdown for More button -->
-<ul id="more-dropdown" class="dropdown-content">
+<ul id="more-dropdown" class="dropdown-content red-text">
   <li><a href="./about">About</a></li>
   <li><a href="https://github.com/camerontsmall/lsutv_website">GitHub</a></li>
   <li><a href="//media.lsu.co.uk">LSU Media</a></li>
 </ul>
 <!-- Dropdown for Shows button -->
-<ul id="cosec-dropdown" class="dropdown-content">
+<ul id="cosec-dropdown" class="dropdown-content red-text">
     <li><a href="./search?term=features">Features</a></li>
     <li><a href="./search?term=entertainment">Entertainment</a></li>
     <li><a href="./search?term=news">News</a></li>

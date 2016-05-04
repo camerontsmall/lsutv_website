@@ -7,10 +7,16 @@ function updateVideoInformation(json_url){
                 contentType: 'application/json',
                 success: function(data){
                     var title = document.getElementById('player-title');
-                    var desc = document.getElementById('player-description');
+                    var subtitle = document.getElementById('player-subtitle');
+                    var desc = document.getElementById('player-description'); 
                     var etags = document.getElementById('player-tags');
                     var info = JSON.parse(data);
                     title.innerHTML = info['title'];
+                    if(info['nowplaying']){
+                        subtitle.innerHTML = info['nowplaying'];
+                    }else{
+                        subtitle.innerHTML = "";
+                    }
                     desc.innerHTML = info['description'];
                     
                     etags.innerHTML = '';
@@ -68,8 +74,12 @@ function updateChannelPanes(){
                                         </div>\
                                         <div class="card-content">\
                                             <div class="search-result-title black-text">' + info['channel_name'] + '</div>\
-                                            <div class="search-result-subtitle black-text">' + info['title'] + '</div>\
-                                        </div>\
+                                            <div class="search-result-subtitle black-text">' + info['title'] + '</div>';
+                                       if(info['nowplaying']){
+                                           html += '<div class="channel-nowplaying truncate black-text italic">' + info['nowplaying'] + '</div>';
+                                       }
+                                       
+                                html += '</div>\
                                         </a>\
                                     </div>';
                                 
