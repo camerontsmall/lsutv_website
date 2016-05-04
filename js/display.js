@@ -73,8 +73,8 @@ function updateChannelPanes(){
                                             <div class="video-container" style="background-image:url(\'' + info['poster'] + '\');"></div>\
                                         </div>\
                                         <div class="card-content">\
-                                            <div class="search-result-title black-text">' + info['channel_name'] + '</div>\
-                                            <div class="search-result-subtitle black-text">' + info['title'] + '</div>';
+                                            <div class="search-result-title truncate black-text">' + info['channel_name'] + '</div>\
+                                            <div class="search-result-subtitle truncate black-text">' + info['title'] + '</div>';
                                        if(info['nowplaying']){
                                            html += '<div class="channel-nowplaying truncate black-text italic">' + info['nowplaying'] + '</div>';
                                        }
