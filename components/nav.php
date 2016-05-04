@@ -15,7 +15,7 @@
 <div class="navbar-fixed">
     <nav>
         <!-- Desktop nav bar -->
-        <div class="nav-wrapper fsaxied" id="main-nav">
+        <div class="nav-wrapper" id="main-nav">
            <div class="container">
                 <a href="." class="brand-logo">
                     <img src="res/lsutv_white.png" alt="LSUTV Logo" id="tv-logo"  />
