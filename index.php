@@ -71,10 +71,13 @@
             </div>
             
              <div class="row" id="live-channels">
+                 <div id="channel_pane_1" class="col s12 m6 l3 channel-pane" style="display:none"></div>
+                 <div id="channel_pane_2" class="col s12 m6 l3 channel-pane" style="display:none"></div>
+                 <div id="channel_pane_3" class="col s12 m6 l3 channel-pane" style="display:none"></div>
+            </div>
                 <?php
             }
                 ?>
-            </div>
             
             <!-- End Live List -->
             <!-- Recent List -->

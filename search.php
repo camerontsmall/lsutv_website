@@ -20,13 +20,14 @@
        <main class="container" id="main-content">
             <div class="row">
                <div class="column s12">
-                   <nav id="search-container" class="red lighten-1">
                    <form action="" method="GET">
+                       <nav class="nav-wrapper red lighten-1">
                        <div class="input-field">
-                        <input id="search-bar" name="term" type="search" required value="<?= $term ?>" placeholder="Search">
-                        <label for="search"><i class="material-icons">search</i></label>
+                            <input id="search-bar" class="active" name="term" type="search" required value="<?= $term ?>" placeholder="Search">
+                            <label for="search"><i class="material-icons">search</i></label>
+                       </div>
+                       </nav>
                    </form>
-                   </nav>
                </div>
             </div>
                
