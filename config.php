@@ -4,6 +4,7 @@ $config = [
     /* Absolute path to public.php file */
     'publicphp' => "http://smalldisasters.co.uk/live/admin/public.php",
     
+    /* Channel ID to load as fallback */
     'featured_channel' => 11,
     
     /* Image to use if one is not found for video/show */

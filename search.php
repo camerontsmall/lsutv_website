@@ -23,8 +23,8 @@
                    <form action="" method="GET">
                        <nav class="nav-wrapper red lighten-1">
                        <div class="input-field">
-                            <input id="search-bar" class="active" name="term" type="search" required value="<?= $term ?>" placeholder="Search">
-                            <label for="search"><i class="material-icons">search</i></label>
+                            <input id="search-bar" class="active" name="term" type="search" required value="<?= $term ?>" placeholder="Search" >
+                            <label for="search-bar"><i class="material-icons">search</i></label>
                        </div>
                        </nav>
                    </form>
@@ -33,8 +33,8 @@
                
             <div class="row" id="search-results">
                 <?php
-                
-                if(strlen($term) > 0){
+                //If term is not blank or whitespace. This actually seems to work somehow.
+                if(strlen($term) > 0 && $term != ' '){
                     $api_url_s = $config['publicphp'] . '?action=plugin_vod&search=' . urlencode($term) . '&limit=100';
                     $results = json_decode(file_get_contents($api_url_s),1);
 

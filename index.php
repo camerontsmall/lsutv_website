@@ -2,9 +2,11 @@
 <html>
     <head>
        <?php 
+            //Page path name
             $pagename = "index";
+            //Include config page
             require_once("config.php");
-            
+            //Include header
             require("components/header.php"); 
         ?>
     </head>
@@ -16,13 +18,16 @@
         <main class="container" id="main-content">
             <div class="row">
                 <div class="col s12 l8">
+                    
                     <!-- Slider Section -->
 <div class="slider">
     <ul class="slides z-depth-1">
       <?php
+      //API url for featured videos
       $api_url_f = $config['publicphp'] . '?action=plugin_vod&tag=featured&limit=7';
+      //Get array of featured videos
       $featured = json_decode(file_get_contents($api_url_f), true);
-      
+      //Load featured videos into slider
       foreach($featured as $result){
           ?>
       <li>
@@ -45,6 +50,7 @@
                     <!--End Slider section -->
                     </div>
                 <div class="col s12 l4">
+                    <!-- Short site description panel -->
                     <div class="card-panel">
                         <?= $config['site_description'] ?>
                     </div>
@@ -57,8 +63,10 @@
             <!-- Live List -->
             
             <?php
-            
+            //API url for finding active channels
+            //TODO - move to client side
             $api_url_l = $config['publicphp'] . '?action=plugin_videomanager&list';
+            //Get array of active channels
             $channels = json_decode(file_get_contents($api_url_l),true);
             
             if(count($channels) > 0){
@@ -83,11 +91,13 @@
             <!-- Recent List -->
             
             <?php
+            //Limit of recent videos to pull
             $limit = 8;
+            //API url for recent videos
             $api_url_r = $config['publicphp'] . "?action=plugin_vod&list&limit=$limit";
+            //Get array of recent videos
             $recent = json_decode(file_get_contents($api_url_r),true);
-            
-            if(count($channels) > 0){
+
             ?>
             
             <div class="row">
@@ -98,7 +108,7 @@
             
              <div class="row" id="search-results">
                 <?php
-                
+                    //Print each video cell
                     foreach($recent as $index => $result){
                        
                         ?>
@@ -117,7 +127,6 @@
                     </div>
                     <?php
                     }
-            }
                 ?>
             </div>
             
@@ -126,6 +135,7 @@
         </main>
         
         <script>
+            //Run JS to display channel panes
             updateChannelPanes();
             var channel_timer = setInterval(function(){ updateChannelPanes(); }, 10000);
         </script>
