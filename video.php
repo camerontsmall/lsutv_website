@@ -34,6 +34,7 @@
             $pagetitle = "LSUTV - " . $content['title'];
             
             require("components/header.php"); 
+            
         ?>
     </head>
     <body>

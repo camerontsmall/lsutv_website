@@ -56,8 +56,17 @@ iframe{
     font-style:italic;
 }
 
-#main-nav{
+.dropdown-content li > a, .dropdown-content li > span{
+    color:#EC2228;
+}
+
+nav{
     background-color:#EC2228;
+}
+
+#main-nav{
+    background-color:transparent;
+    z-index:50;
 }
 
 #search-bar{
@@ -79,6 +88,19 @@ iframe{
 
 #main-content{
     margin-top:2em;
+}
+
+#main-content-home{
+    margin-top:100vh;
+}
+
+#welcome-screen{
+    
+}
+
+#slide-container{
+    height:100vh;
+    overflow:hidden;
 }
 
 .channel-nowplaying{

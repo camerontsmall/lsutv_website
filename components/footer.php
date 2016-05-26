@@ -14,7 +14,7 @@
                 -->
             </div>
             <div class="col l3 s12 right">
-              <h5 class="white-text">Links</h5>
+              <h5 class="white-text">Follow us</h5>
               <ul>
                 <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/lsutvonline/">Facebook</a></li>
                 <li><a class="grey-text text-lighten-3" href="https://twitter.com/LSUTV_lsu">Twitter</a></li>
@@ -24,7 +24,7 @@
     </div>
     <div class="footer-copyright">
           <div class="container">
-          © 2016 LSU Media
+          © 2016 LSUTV
           </div>
     </div>
 </footer>

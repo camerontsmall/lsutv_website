@@ -1,0 +1,30 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26-May-2016, 19:45:34
+    Author     : Cameron
+*/
+nav {
+  background-color: transparent;
+  box-shadow: none; }
+
+#nav-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: #EC2228;
+  z-index: 30;
+  background-blend-mode: color-dodge; }
+
+.slider.fullscreen {
+  z-index: 50; }
+
+.slider .indicators .indicator-item.active {
+  background-color: #EC2228; }
+
+/*# sourceMappingURL=style_home.css.map */

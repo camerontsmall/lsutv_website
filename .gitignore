@@ -8,6 +8,8 @@ nbproject/*
 !nbproject/project.properties
 !nbproject/project.xml
 
+admin/config.php
+
 #java specific
 *.class
 

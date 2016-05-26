@@ -1,5 +1,6 @@
 <!-- Dropdown for More button -->
 <ul id="more-dropdown" class="dropdown-content red-text">
+    <li><a href="./blog">Blog</a></li>
   <li><a href="./about">About</a></li>
   <li><a href="https://github.com/camerontsmall/lsutv_website">GitHub</a></li>
   <li><a href="//media.lsu.co.uk">LSU Media</a></li>
@@ -44,6 +45,7 @@
                 <li><a href="./search?term=music">Music</a></li>
                 <li><a href="./search?term=sport">Sport</a></li>
                 <li class="divider"></li>
+                <li><a href="./blog">Blog</a></li>
                 <li><a href="./about">About</a></li>
           </ul>
         </div>

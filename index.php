@@ -9,18 +9,17 @@
             //Include header
             require("components/header.php"); 
         ?>
+        <link rel="stylesheet" href="css/style_home.css" />
     </head>
     <body>
         <!-- Navigation section -->
         <?php require("components/nav.php"); ?>
         
-        <!-- Content section -->
-        <main class="container" id="main-content">
-            <div class="row">
-                <div class="col s12 l8">
-                    
+        <div id="nav-bg" class="z-depth-2"></div>
+        
+        <div class="slide-container">
                     <!-- Slider Section -->
-<div class="slider">
+<div class="slider fullscreen">
     <ul class="slides z-depth-1">
       <?php
       //API url for featured videos
@@ -35,6 +34,7 @@
         <div class="caption center-align">
             <a href="./video?play=<?= $result['id'] ?>">
                 <h3 class="readable"><?= $result['title'] ?></h3>
+                <div class="btn waves-effect red white-text">WATCH NOW</div>
                 <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
             </a>
         </div>
@@ -46,18 +46,19 @@
       ?>
     </ul>
   </div>
-                    
-                    <!--End Slider section -->
-                    </div>
-                <div class="col s12 l4">
+<!--End Slider section -->
+    </div>
+        
+        <!-- Content section -->
+        <main class="container" id="main-content-home">
+            
+            <div class="row">
+                <div class="col s12">
                     <!-- Short site description panel -->
-                    <div class="card-panel">
-                        <?= $config['site_description'] ?>
-                    </div>
+                        <h5><?= $config['site_description'] ?></h5>
                 </div>
                 </div>
             </div>
-            
             <!-- Video List Section -->
             
             <!-- Live List -->
