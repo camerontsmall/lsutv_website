@@ -1,6 +1,7 @@
 <!-- Meta fields -->
 <meta charset="UTF-8" />
-<title><?php echo ($pagetitle)? $pagetitle : "LSUTV"; ?></title>
+<?php $pagetitle = ($pagetitle)? $pagetitle : "LSUTV - Home"; ?>
+<title><?= $pagetitle ?></title>
 
 <!-- Fonts -->
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -22,6 +23,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script type="text/javascript" src="js/display.js"></script>
+
+<!-- OpenGraph sitewide tags -->
+<meta property="og:title" content="<?= $pagetitle ?>" />
+<meta property="og:site_name" content="LSUTV" />
+<meta property="og:locale" content="en_GB" />
 
 <!-- Theme colour for mobile users -->
 <meta name="theme-color" content="#EC2228">

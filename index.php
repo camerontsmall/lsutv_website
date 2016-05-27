@@ -9,6 +9,10 @@
             //Include header
             require("components/header.php"); 
         ?>
+        
+        <meta property="og:description" content="<?= htmlspecialchars($config['site_description']) ?>" />
+        <meta property="og:image" content="<?= $config['filler_image'] ?>" />
+        
         <link rel="stylesheet" href="css/style_home.css" />
     </head>
     <body>
@@ -55,7 +59,8 @@
             <div class="row">
                 <div class="col s12">
                     <!-- Short site description panel -->
-                        <h5><?= $config['site_description'] ?></h5>
+                    <h4><?= $config['site_welcome'] ?></h4>
+                    <p><?= $config['site_description'] ?></p>
                 </div>
                 </div>
             </div>

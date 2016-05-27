@@ -36,6 +36,11 @@
             require("components/header.php"); 
             
         ?>
+        
+        <meta property="og:description" content="<?= htmlspecialchars($content['description']) ?>" />
+        <meta property="og:image" content="<?= ($content['poster'])? $content['poster'] : $content['poster_url'] ?>" />
+        <meta property="og:video" />
+        <meta property="og:video:url" content="<?= $iframe_url ?>" />
     </head>
     <body>
         <!-- Navigation section -->
@@ -50,7 +55,7 @@
                     <div id="player-container" class="z-depth-1 player-container <?= $content['type'] ?>-container">
                         <iframe class="player-inner <?= $content['type'] ?>" allowfullscreen src="<?= $iframe_url ?>"></iframe>
                     </div>
-                    <div id="player-info" class="card">
+                    <div id="player-info" class="card z-depth-0">
                         <div id="player-important" class="card-content">
                             <div id="player-channel-title"><?= $content['channel_name'] ?></div>
                             <div id="player-title" class="card-title"><?= $content['title'] ?></div>
@@ -125,7 +130,7 @@
                         foreach($related as $result){
                             if($counter < 6 && $result['id'] != $playing){
                         ?>
-                        <div class="card-panel hoverable grey lighten-5 z-depth-1 playlist-item" >
+                        <div class="hoverable z-depth-0 playlist-item" >
                             <a href="./video?play=<?= $result['id'] ?>">
                             <div class="row valign-wrapper">
                                 <div class="col s3">

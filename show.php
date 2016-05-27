@@ -21,6 +21,9 @@ if(!isset($_GET['id'])){
             
             require("components/header.php"); 
         ?>
+        
+        <meta property="og:description" content="<?= htmlspecialchars($show['description']) ?>" />
+        <meta property="og:image" content="<?= $show['poster_url'] ?>" />
     </head>
     <body>
         <!-- Navigation section -->

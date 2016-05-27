@@ -7,6 +7,10 @@
             require_once("config.php");
             require("components/header.php"); 
         ?>
+        
+        <meta property="og:description" content="All the shows from LSUTV" />
+        <meta property="og:image" content="<?= $config['filler_image'] ?>" />
+        
     </head>
     <body>
         <!-- Navigation section -->
