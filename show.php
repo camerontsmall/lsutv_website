@@ -103,6 +103,7 @@ if(!isset($_GET['id'])){
             
             /* Academic years, from the calendar year it starts (eg. 2015 => 2015-16) */
             $years = [];
+            
             foreach($show['episodes'] as $episode_d){
                 //Get date of episode
                 $datestring = $episode_d['date'];
@@ -123,8 +124,10 @@ if(!isset($_GET['id'])){
             $ac_year;
 
             if(isset($_GET['year'])){
+                //Get selected year if one is selected
                 $ac_year = $_GET['year'];
             }else{
+                //Else pick [0] from years array as this will always be the latest
                 $ac_year = $years[0];
             }
             /* Get available years from episodes */
@@ -135,6 +138,7 @@ if(!isset($_GET['id'])){
                 <div class="col s12 l6"><h4>Episodes</h4></div>
                 <select class="col s12 l3 offset-l3" id="show-year-select">
                     <?php
+                    //Add years to select menu
                     foreach($years as $year_a){
                         $plusone = $year_a + 1;
                         $selected = ($year_a == $ac_year)? "selected" : "";
@@ -144,7 +148,7 @@ if(!isset($_GET['id'])){
                 </select>
             </div>
             <script>
-                //Change year function
+                //Onchange year function
                 $('#show-year-select').change(function(){
                     var val = $('#show-year-select').val();
                     window.location.href = "./show?id=<?= $show_id ?>&year=" + val;
@@ -155,11 +159,13 @@ if(!isset($_GET['id'])){
                 <div class="col s12">
                     <?php
                     
-                    
+                    //Dates after start of selected academic year
                     $after = $ac_year . '-09-01';
+                    //Dates before end of selected academic year
                     $before = ($ac_year + 1) . '-08-31';
-                    
+                    //Episode list API URL
                     $api_url_e = $config['publicphp'] . '?action=plugin_vod&tag=' . $show['tag'] . "&after=$after&before=$before";
+                    //Episodes array
                     $episodes = json_decode(file_get_contents($api_url_e),true);
                     foreach($episodes as $result){
                     ?>
@@ -185,6 +191,7 @@ if(!isset($_GET['id'])){
         </main>
          
         <?php
+        //If year is set => user selected a year, go to episode list
         if(isset($_GET['year'])){
         ?>
         <script>
