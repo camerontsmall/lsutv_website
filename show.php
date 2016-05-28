@@ -97,17 +97,69 @@ if(!isset($_GET['id'])){
                         </div>
                     </div>
                 </div>
-                
             </div>
-            <?php if(count($show['episodes']) > 0){ ?>
-            <div class="row">
-                <div class="col"><h4>Episodes</h4></div>
+            
+            <?php
+            
+            /* Academic years, from the calendar year it starts (eg. 2015 => 2015-16) */
+            $years = [];
+            foreach($show['episodes'] as $episode_d){
+                //Get date of episode
+                $datestring = $episode_d['date'];
+                //Convert to timestamp
+                $e_timestamp = strtotime($datestring);
+                //Subtract 9 months (so we only see episodes after September 1st)
+                //244 - DOY of September 1st on non-leap year
+                $e_timestamp -= 60 * 60 * 24 * 244;
+                //Convert back to a year
+                $e_year = intval(date('Y', $e_timestamp));
+                //echo $e_year;
+                if(!in_array($e_year, $years)){
+                    $years[] = $e_year;
+                }
+            }
+            
+            //Academic year to show results for
+            $ac_year;
+
+            if(isset($_GET['year'])){
+                $ac_year = $_GET['year'];
+            }else{
+                $ac_year = $years[0];
+            }
+            /* Get available years from episodes */
+            
+            ?>
+            <a name="episodes" id="episodes"></a>
+            <div class="row show-episode-header" id="episodes-header">
+                <div class="col s12 l6"><h4>Episodes</h4></div>
+                <select class="col s12 l3 offset-l3" id="show-year-select">
+                    <?php
+                    foreach($years as $year_a){
+                        $plusone = $year_a + 1;
+                        $selected = ($year_a == $ac_year)? "selected" : "";
+                        echo "<option $selected value=\"$year_a\">$year_a-$plusone</option>";
+                    }
+                    ?>
+                </select>
             </div>
-            <?php } ?>
+            <script>
+                //Change year function
+                $('#show-year-select').change(function(){
+                    var val = $('#show-year-select').val();
+                    window.location.href = "./show?id=<?= $show_id ?>&year=" + val;
+                });
+            </script>
+            
             <div class="row">
                 <div class="col s12">
                     <?php
-                    $api_url_e = $config['publicphp'] . '?action=plugin_vod&tag=' . $show['tag'];
+                    
+                    
+                    $after = $ac_year . '-09-01';
+                    $before = ($ac_year + 1) . '-08-31';
+                    
+                    $api_url_e = $config['publicphp'] . '?action=plugin_vod&tag=' . $show['tag'] . "&after=$after&before=$before";
                     $episodes = json_decode(file_get_contents($api_url_e),true);
                     foreach($episodes as $result){
                     ?>
@@ -132,8 +184,22 @@ if(!isset($_GET['id'])){
             </div>
         </main>
          
-        
-        
+        <?php
+        if(isset($_GET['year'])){
+        ?>
+        <script>
+        $(document).ready(function(){
+            //Scroll to episodes section
+           location.hash = '#episodes';
+           <?php if(count($episodes) > 4){ ?>
+            //Compensate for navbar - only if there are >4 episodes
+           setTimeout(function(){ window.scrollBy(0,-50); }, 1);
+           <?php } ?>
+       });
+        </script>
+         <?php
+        }
+        ?>
          
         <?php require("components/footer.php"); ?>
         

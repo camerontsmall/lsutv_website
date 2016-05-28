@@ -19,6 +19,7 @@
   }
 }
 
+$lsutv_red: #EC2228;
 
 body {
     display: flex;
@@ -57,11 +58,11 @@ iframe{
 }
 
 .dropdown-content li > a, .dropdown-content li > span{
-    color:#EC2228;
+    color:$lsutv_red;
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
-    color:#EC2228;
+    color:$lsutv_red;
 }
 
 .parallax-container {
@@ -79,7 +80,7 @@ iframe{
  }
 
 nav{
-    background-color:#EC2228;
+    background-color:$lsutv_red;
 }
 
 #main-nav{
@@ -181,7 +182,7 @@ overflow:hidden;
 }
 
 #footer{
-    background-color:#EC2228;
+    background-color:$lsutv_red;
 }
 
 #footer-logo{
@@ -194,6 +195,17 @@ overflow:hidden;
     display:inline-block;
 }
 
+.show-episode-header{
+    
+    h4{
+       line-height:61px;
+       margin:0;
+   }
+
+   input.select-dropdown{
+       //border-bottom:none;
+   }
+}
 /* Player container special adjustments */
 
 .spotify-container:after{
@@ -206,8 +218,9 @@ overflow:hidden;
 
 @media(max-width:600px){
     .parallax-container{
-        height:50vw;
+        height:120px;
     }
+    
     #show-title h3{
         font-size:2rem;
         white-space:normal;
