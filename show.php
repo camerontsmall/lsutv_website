@@ -26,6 +26,15 @@ if(!isset($_GET['id'])){
         <meta property="og:image" content="<?= $show['poster_url'] ?>" />
     </head>
     <body>
+        <!--
+        <style>
+            body{
+                background-color:<?= $show['theme_colour'] ?>;
+                background-size:cover;
+                background-position:center;
+            }
+        </style>
+        -->
         <!-- Navigation section -->
         <?php require("components/nav.php"); ?>
         

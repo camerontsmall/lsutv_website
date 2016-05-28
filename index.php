@@ -19,7 +19,7 @@
         <!-- Navigation section -->
         <?php require("components/nav.php"); ?>
         
-        <div id="nav-bg" class="z-depth-2"></div>
+        <div id="nav-bg" class="z-depth-1"></div>
         
         <div class="slide-container">
                     <!-- Slider Section -->

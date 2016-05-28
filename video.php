@@ -37,10 +37,17 @@
             
         ?>
         
+        <meta property="og:type" content="video.tv_show" />
+        <meta property="video:release_date" content="<?= $content['date'] ?>" />
+        
         <meta property="og:description" content="<?= htmlspecialchars($content['description']) ?>" />
         <meta property="og:image" content="<?= ($content['poster'])? $content['poster'] : $content['poster_url'] ?>" />
         <meta property="og:video" />
+        <meta property="og:video:type" content="application/x-shockwave-flash" />
         <meta property="og:video:url" content="<?= $iframe_url ?>" />
+        <meta property="og:video:secure_url" content="<?= $iframe_url ?>" />
+        
+        
     </head>
     <body>
         <!-- Navigation section -->
@@ -55,7 +62,7 @@
                     <div id="player-container" class="z-depth-1 player-container <?= $content['type'] ?>-container">
                         <iframe class="player-inner <?= $content['type'] ?>" allowfullscreen src="<?= $iframe_url ?>"></iframe>
                     </div>
-                    <div id="player-info" class="card z-depth-0">
+                    <div id="player-info" class="card z-depth-1">
                         <div id="player-important" class="card-content">
                             <div id="player-channel-title"><?= $content['channel_name'] ?></div>
                             <div id="player-title" class="card-title"><?= $content['title'] ?></div>
