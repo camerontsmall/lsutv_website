@@ -38,6 +38,16 @@ if(!isset($_GET['id'])){
         <!-- Navigation section -->
         <?php require("components/nav.php"); ?>
         
+        <div id="show-cover" class="parallax-container">
+            <div class="section no-pad bot" id="show-title">
+                <div class="container">
+                    <h3><?= $show['title'] ?></h3>
+                </div>
+            </div>
+            <div class="parallax">
+                <img src="<?= $show['poster_url'] ?>">
+            </div>
+        </div>
         
          <!-- Content section -->
         <main class="container" id="main-content">
@@ -53,32 +63,33 @@ if(!isset($_GET['id'])){
             <!-- Player & playlist -->
             <div class="row">
                 
-                <div class="col s12 l4">
-                    
-                    <div id="show-description" class="card">
-                        <div class="card-image">
-                            <img src="<?= $show['poster_url'] ?>" />
-                        </div>
-                        <div class="card-content">
-                            <div id="player-title" class="card-title"><?= $show['title'] ?></div>
-                            <p><?= $show['description'] ?></p>
-                        </div>
-                    </div>
-                </div>
+                
                 
                 <?php
                 if($current_episode){
                     ?>
                 <div class="col s12 l8 hide-on-med-and-down">
                     <div class="video-container z-depth-1">
-                        <iframe src="<?= $config['publicphp'] . '?action=plugin_vod&iframe=' . $current_episode['id'] ?>">
-                        Your browser doesn't support iframes. We feel very sorry for you.
-                        </iframe>
+                        <img src="<?= $current_episode['poster'] ?>" width="100%"/>
+                    </div>
                 </div>
                     <?php
                 }
                 ?>
                
+                <div class="col s12 l4">
+                    
+                    <div id="show-description" class="card z-depth-0">
+                        <!-- <div class="card-image">
+                            <img src="<?= $show['poster_url'] ?>" />
+                        </div> -->
+                        <div class="card-content">
+                            <!-- <div id="player-title" class="card-title"><?= $show['title'] ?></div> -->
+                            <p><?= $show['description'] ?></p>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
             <?php if(count($show['episodes']) > 0){ ?>
             <div class="row">

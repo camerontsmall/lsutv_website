@@ -34,6 +34,16 @@ iframe {
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
   color: #EC2228; }
 
+.parallax-container {
+  height: 300px; }
+
+.parallax {
+  -webkit-filter: blur(30px);
+  -moz-filter: blur(30px);
+  -ms-filter: blur(30px);
+  filter: blur(30px);
+  background-color: black; }
+
 nav {
   background-color: #EC2228; }
 
@@ -43,6 +53,13 @@ nav {
 
 #search-bar {
   height: 64px; }
+
+#show-title {
+  bottom: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 100%;
+  color: white; }
 
 #tv-logo {
   height: 48px;
@@ -122,6 +139,13 @@ nav {
   padding-top: 41.7%; }
 
 @media (max-width: 600px) {
+  .parallax-container {
+    height: 50vw; }
+
+  #show-title h3 {
+    font-size: 2rem;
+    white-space: normal; }
+
   #tv-logo {
     height: 40px; }
 
