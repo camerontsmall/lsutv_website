@@ -74,6 +74,14 @@ if(!isset($_GET['id'])){
                     </div>
                 </div>
                     <?php
+                }else{
+                    ?>
+                <div class="col s12 l8 hide-on-med-and-down">
+                    <div class="video-container z-depth-1">
+                        <img src="<?= $show['poster_url'] ?>" width="100%"/>
+                    </div>
+                </div>
+                <?php
                 }
                 ?>
                
