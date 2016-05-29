@@ -103,27 +103,7 @@ $pagetitle = "LSUTV - " . $content['title'];
                     <div id="player-playlist">
                         <?php if($channels){ ?><h5 id="live-indicator">Live Now</h5><?php } ?>
                         <div id="channel-list">
-                    <?php
-                    foreach($channels as $video){
-                        ?>
-                        <div class="hoverable z-depth-0 playlist-item" >
-                            <a href="./video?play=-<?= $video['id'] ?>">
-                            <div class="row">
-                                <div class="col s3 responsive-video">
-                                    <img src="<?= $video['thumbnail'] ?>" alt="" class="responsive-img left" style="width:50%; height:auto;"/>
-                                </div>
-                                <div class="col s9">
-                                    <span class="black-text card-title">
-                                      <?= $video['title'] ?>
-                                    </span>
-                                </div>
-                              
-                            </div>
-                            </a>
-                        </div>
-                    <?php
-                    }
-                    ?>
+                   
                         </div>
                     <?php
                     
@@ -147,10 +127,10 @@ $pagetitle = "LSUTV - " . $content['title'];
                         <div class="hoverable z-depth-0 playlist-item" >
                             <a href="./video?play=<?= $result['id'] ?>">
                             <div class="row">
-                                <div class="col s3 responsive-video">
-                                    <img src="<?= $result['poster'] ?>" alt="" class="responsive-img left" />
+                                <div class="col s4 responsive-video">
+                                    <img src="<?= $result['poster'] ?>" alt="" class="responsive-img left z-depth-1" />
                                 </div>
-                                <div class="col s9">
+                                <div class="col s8">
                                     <span class="black-text card-title">
                                       <?= $result['title'] ?>
                                     </span>

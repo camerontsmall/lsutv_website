@@ -122,17 +122,19 @@ function updateChannelPanes(){
 
 function updateChannelList(){
     /* For homepage channel panes */
-    json_url = config['publicphp'] + '?action=plugin_videomanager&list'; 
+    var json_url_c = config['publicphp'] + '?action=plugin_videomanager&list'; 
     $.ajax({
-                url: json_url,
+                url: json_url_c,
                 type : 'GET',
                 contentType: 'application/json',
                 success: function(data){
                     data = JSON.parse(data);
                     var channelpanec = document.getElementById("channel-list");
-                      
+                    var livelabel = document.getElementById("live-indicator");
+                    
+                    livelabel.style.display = 'none';
                     for(n in data){
-                        
+                        livelabel.style.display = 'block';
                         var channel = data[n];
                         var cid = channel['id'];
                         var json_url_2 = config['publicphp'] + '?action=plugin_videomanager&id=' + cid;
@@ -150,37 +152,18 @@ function updateChannelList(){
                                 var container = document.createElement('div');
                                 
                                 container.id = pane_id;
-                                container.className = "playlist-item z-depth-0";
+                                container.className = "playlist-item z-depth-0 channel-pane";
                                 
                                 var html = '<a href="./video?play=-' + info['channelID'] + '">\
                                         <div class="row">\
-                                            <div class="col s3 responsive-video">\
-                                                <img src="' + info['poster'] + '" alt="Channel image" class="responsive-img left" style="width:50%; height:auto;"/>\
+                                            <div class="col s4 responsive-video">\
+                                                <img src="' + info['poster'] + '" alt="Channel image" class="responsive-img left z-depth-1"/>\
                                             </div>\
-                                            <div class="col s9">\
+                                            <div class="col s8">\
                                                 <span class="black-text card-title">' + info['channel_name'] + '</span>\
-                                                <span class="grey-text">' + info['title'] + ((info['nowplaying'])? ' - ' + info['nowplaying']: '') +'</span>\
+                                                <span class="grey-text truncate">' + info['title'] + ((info['nowplaying'])? ' - ' + info['nowplaying']: '') +'</span>\
                                             </div>\
                                     </a>';
-                                
-                                
-                                /*
-                                 * <div class="hoverable z-depth-0 playlist-item" >
-                            <a href="./video?play=-<?= $video['id'] ?>">
-                            <div class="row">
-                                <div class="col s3 responsive-video">
-                                    <img src="<?= $video['thumbnail'] ?>" alt="" class="responsive-img left" style="width:50%; height:auto;"/>
-                                </div>
-                                <div class="col s9">
-                                    <span class="black-text card-title">
-                                      <?= $video['title'] ?>
-                                    </span>
-                                </div>
-                              
-                            </div>
-                            </a>
-                        </div>
-                                 */
                                 
                                 if(document.getElementById(pane_id)){
                                     var pane = document.getElementById(pane_id);
