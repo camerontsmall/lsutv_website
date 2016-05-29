@@ -140,7 +140,8 @@ if(!isset($_GET['id'])){
                     <?php
                     //Add years to select menu
                     foreach($years as $year_a){
-                        $plusone = $year_a + 1;
+                        //Pick last two numbers of year
+                        $plusone = substr(($year_a + 1),2,2);
                         $selected = ($year_a == $ac_year)? "selected" : "";
                         echo "<option $selected value=\"$year_a\">$year_a-$plusone</option>";
                     }

@@ -1,41 +1,44 @@
+<?php
+ if(isset($_GET['play'])){
+                $play = intval($_GET['play']);
+}else{
+    header('location:error.php');
+}
+
+$pagename = "index";
+require_once("config.php");
+
+if($play > 0){
+    //Play video
+    $api_url = $config['publicphp'] . '?action=plugin_vod&id=' . $play;
+    $iframe_url = $config['publicphp'] . '?action=plugin_vod&iframe=' . $play . '&autoplay=1';
+    $is_vod = true;
+}else{
+    //Play channel
+    $api_url = $config['publicphp'] . '?action=plugin_videomanager&id=' . abs($play);
+    $iframe_url = $config['publicphp'] . '?action=plugin_videomanager&iframe=' . abs($play)  . '&autoplay=1';
+    $is_live = true;
+}
+
+$content = json_decode(file_get_contents($api_url),true);
+
+if($content == null){
+    header('location:error.php');
+}
+
+$tags = explode(' ', $content['tags']);
+
+$playing = $play;
+
+$relatedtag = strtolower(end($tags));
+
+$pagetitle = "LSUTV - " . $content['title'];
+
+?>
 <!doctype html>
 <html>
-    <head>
-       <?php 
-            $pagename = "index";
-            require_once("config.php");
-            
-            if(isset($_GET['play'])){
-                $play = intval($_GET['play']);
-            }else{
-                $play = -$config['featured_channel'];
-            }
-            
-            if($play > 0){
-                //Play video
-                $api_url = $config['publicphp'] . '?action=plugin_vod&id=' . $play;
-                $iframe_url = $config['publicphp'] . '?action=plugin_vod&iframe=' . $play . '&autoplay=1';
-                $is_vod = true;
-            }else{
-                //Play channel
-                $api_url = $config['publicphp'] . '?action=plugin_videomanager&id=' . abs($play);
-                $iframe_url = $config['publicphp'] . '?action=plugin_videomanager&iframe=' . abs($play)  . '&autoplay=1';
-                $is_live = true;
-            }
-            
-            $content = json_decode(file_get_contents($api_url),true);
-            
-            $tags = explode(' ', $content['tags']);
-            
-            $playing = $play;
-            
-            $relatedtag = strtolower(end($tags));
-            
-            $pagetitle = "LSUTV - " . $content['title'];
-            
-            require("components/header.php"); 
-            
-        ?>
+    <head>        
+        <?php require_once("components/header.php"); ?>
         
         <meta property="og:type" content="video.tv_show" />
         <meta property="video:release_date" content="<?= $content['date'] ?>" />
