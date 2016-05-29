@@ -8,8 +8,8 @@
             </div>
             <div class="col l4 s12 white-text" id="footer-section-logos">
                 <!--
-                <a href="//radio.lsu.co.uk"><img src='res/LCR.png'></a>
                 <a href="//media.lsu.co.uk"><img src='res/Label.png'></a>
+                <a href="//radio.lsu.co.uk"><img src='res/LCR.png'></a>
                 <a href="//media.lsu.co.uk"><img src='res/Lens.png'></a>
                 -->
             </div>

@@ -43,12 +43,16 @@ $pagetitle = "LSUTV - " . $content['title'];
         <meta property="og:type" content="video.tv_show" />
         <meta property="video:release_date" content="<?= $content['date'] ?>" />
         
-        <meta property="og:description" content="<?= htmlspecialchars($content['description']) ?>" />
+        <?php 
+        $tags = ['<p>','</p>','<blockquote>','</blockquoute>'];
+        $desc_no_tags = str_replace($tags, "", $content['description']); 
+        ?>
+        <meta property="og:description" content="<?= htmlspecialchars($desc_no_tags) ?>" />
         <meta property="og:image" content="<?= ($content['poster'])? $content['poster'] : $content['poster_url'] ?>" />
         <meta property="og:video" />
         <meta property="og:video:type" content="application/x-shockwave-flash" />
         <meta property="og:video:url" content="<?= $iframe_url ?>" />
-        <meta property="og:video:secure_url" content="<?= $iframe_url ?>" />
+        <!-- <meta property="og:video:secure_url" content="<?= $iframe_url ?>" /> -->
         
         
     </head>
