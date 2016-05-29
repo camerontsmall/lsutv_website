@@ -119,9 +119,9 @@
                        
                         ?>
                     <div class="col s12 m6 l3">
-                        <div class="card small hoverable pointer">
+                        <div class="card small pointer z-depth-0">
                             <a href="./video?play=<?= $result['id'] ?>">
-                            <div class="card-image">
+                            <div class="card-image z-depth-1">
                                 <div class="video-container" style="background-image:url('<?= $result['poster'] ?>');"></div>
                             </div>
                             <div class="card-content">

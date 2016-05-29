@@ -35,7 +35,7 @@
                         $show['poster_url'] = ($show['poster_url'])? $show['poster_url'] : $config['filler_image'];
                         ?>
                         <div class="show-container col s12 m6 l4">
-                             <div class="card medium hoverable">
+                             <div class="card medium">
                                   <div class="card-image waves-effect waves-block waves-light">
                                       <div class="video-container">
                                       <img class="activator" src="<?= $show['poster_url'] ?>">

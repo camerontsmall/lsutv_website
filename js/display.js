@@ -67,9 +67,9 @@ function updateChannelPanes(){
                                 container.id = pane_id;
                                 container.className = "col s12 m6 l3 channel-pane";
                                 
-                                var html = '<div class="card small hoverable pointer">\
+                                var html = '<div class="card small pointer z-depth-0">\
                                         <a href="./video?play=-' + info['channelID'] + '">\
-                                        <div class="card-image">\
+                                        <div class="card-image z-depth-1">\
                                             <div class="video-container" style="background-image:url(\'' + info['poster'] + '\');"></div>\
                                         </div>\
                                         <div class="card-content">\
