@@ -161,7 +161,8 @@ function updateChannelList(){
                                             </div>\
                                             <div class="col s8">\
                                                 <span class="black-text card-title">' + info['channel_name'] + '</span>\
-                                                <span class="grey-text truncate">' + info['title'] + ((info['nowplaying'])? ' - ' + info['nowplaying']: '') +'</span>\
+                                                <span class="grey-text truncate">' + info['title'] + '</span>\
+                                                <span class="grey-text truncate italic">' + ((info['nowplaying'])? info['nowplaying']: '') +'</span>\
                                             </div>\
                                     </a>';
                                 

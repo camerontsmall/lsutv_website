@@ -103,7 +103,7 @@ $pagetitle = "LSUTV - " . $content['title'];
                     <div id="player-playlist">
                         <?php if($channels){ ?><h5 id="live-indicator">Live Now</h5><?php } ?>
                         <div id="channel-list">
-                   
+                            
                         </div>
                     <?php
                     
