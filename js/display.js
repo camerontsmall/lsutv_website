@@ -119,3 +119,102 @@ function updateChannelPanes(){
                 }
             });
 }
+
+function updateChannelList(){
+    /* For homepage channel panes */
+    json_url = config['publicphp'] + '?action=plugin_videomanager&list'; 
+    $.ajax({
+                url: json_url,
+                type : 'GET',
+                contentType: 'application/json',
+                success: function(data){
+                    data = JSON.parse(data);
+                    var channelpanec = document.getElementById("channel-list");
+                      
+                    for(n in data){
+                        
+                        var channel = data[n];
+                        var cid = channel['id'];
+                        var json_url_2 = config['publicphp'] + '?action=plugin_videomanager&id=' + cid;
+                        
+                        $.ajax({
+                            url: json_url_2,
+                            type : 'GET',
+                            contentType: 'application/json',
+                            success: function(data){
+                                
+                                var info = JSON.parse(data);
+                                
+                                var pane_id = 'channel_pane_' + info['channelID'];
+                                
+                                var container = document.createElement('div');
+                                
+                                container.id = pane_id;
+                                container.className = "playlist-item z-depth-0";
+                                
+                                var html = '<a href="./video?play=-' + info['channelID'] + '">\
+                                        <div class="row">\
+                                            <div class="col s3 responsive-video">\
+                                                <img src="' + info['poster'] + '" alt="Channel image" class="responsive-img left" style="width:50%; height:auto;"/>\
+                                            </div>\
+                                            <div class="col s9">\
+                                                <span class="black-text card-title">' + info['channel_name'] + '</span>\
+                                                <span class="grey-text">' + info['title'] + ((info['nowplaying'])? ' - ' + info['nowplaying']: '') +'</span>\
+                                            </div>\
+                                    </a>';
+                                
+                                
+                                /*
+                                 * <div class="hoverable z-depth-0 playlist-item" >
+                            <a href="./video?play=-<?= $video['id'] ?>">
+                            <div class="row">
+                                <div class="col s3 responsive-video">
+                                    <img src="<?= $video['thumbnail'] ?>" alt="" class="responsive-img left" style="width:50%; height:auto;"/>
+                                </div>
+                                <div class="col s9">
+                                    <span class="black-text card-title">
+                                      <?= $video['title'] ?>
+                                    </span>
+                                </div>
+                              
+                            </div>
+                            </a>
+                        </div>
+                                 */
+                                
+                                if(document.getElementById(pane_id)){
+                                    var pane = document.getElementById(pane_id);
+                                    pane.innerHTML = html;
+                                }else{
+                                    container.innerHTML = html;
+                                    channelpanec.appendChild(container);
+                                }
+                            }
+                        });
+                        
+                    }
+                    
+                    var panes = document.getElementsByClassName('channel-pane');
+                    /* Set/unset pane visibility based on status */
+                    for(p in panes){
+                        var pane = panes[p];
+                        var isLive = false;
+                        var id = pane.id;
+                        
+                        for(n in data){
+                            var checkId = 'channel_pane_' + data[n]['id'];
+                            if(checkId == id){
+                                isLive = true;
+                            }
+                        }
+                        
+                        if(isLive){
+                            pane.style.display = "block";
+                        }else{
+                            pane.style.display = "none";
+                        }
+                        
+                    }
+                }
+            });
+}

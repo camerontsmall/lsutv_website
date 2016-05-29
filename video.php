@@ -93,35 +93,39 @@ $pagetitle = "LSUTV - " . $content['title'];
                         </div>
                        </div>
                 </div>
+                
+                <!-- Related/live videos section -->
                 <div class="col s12 l4">
-                    <div id="player-playlist">
-                        
                     <?php
-                    
-                    $api_url_c = $config['publicphp'] . '?action=plugin_videomanager&list';
-                    $channels = json_decode(file_get_contents($api_url_c),true);
-                    
-                    $printedLT = false;
-                    
+                        $api_url_c = $config['publicphp'] . '?action=plugin_videomanager&list';
+                        $channels = json_decode(file_get_contents($api_url_c),true);
+                    ?>
+                    <div id="player-playlist">
+                        <?php if($channels){ ?><h5 id="live-indicator">Live Now</h5><?php } ?>
+                        <div id="channel-list">
+                    <?php
                     foreach($channels as $video){
-                            if(!$printedLT){
-                                echo "<h5>Live Now</h5>";
-                                $printedLT = true;
-                            }
                         ?>
-                        <div class="card-panel hoverable red lighten-1 white-text z-depth-1 playlist-item" 
-                             onclick="window.location.href='./video?play=-<?= $video['id'] ?>';">
-                               <div class="row valign-wrapper">
-                                 <div class="col s2">
-                                   <img src="<?= $video['thumbnail'] ?>" alt="" class="responsive-img" />
-                                 </div>
-                                 <div class="col s10">
-                                   <span class=card-title"><?= $video['title']?></span>
-                                 </div>
-                               </div>
-                           </div>
+                        <div class="hoverable z-depth-0 playlist-item" >
+                            <a href="./video?play=-<?= $video['id'] ?>">
+                            <div class="row">
+                                <div class="col s3 responsive-video">
+                                    <img src="<?= $video['thumbnail'] ?>" alt="" class="responsive-img left" style="width:50%; height:auto;"/>
+                                </div>
+                                <div class="col s9">
+                                    <span class="black-text card-title">
+                                      <?= $video['title'] ?>
+                                    </span>
+                                </div>
+                              
+                            </div>
+                            </a>
+                        </div>
                     <?php
                     }
+                    ?>
+                        </div>
+                    <?php
                     
                     $related = json_decode(file_get_contents($config['publicphp'] . '?action=plugin_vod&limit=7&tag=' . $relatedtag),true);
                     
@@ -142,14 +146,15 @@ $pagetitle = "LSUTV - " . $content['title'];
                         ?>
                         <div class="hoverable z-depth-0 playlist-item" >
                             <a href="./video?play=<?= $result['id'] ?>">
-                            <div class="row valign-wrapper">
-                                <div class="col s3">
-                                <img src="<?= $result['poster'] ?>" alt="" class="responsive-img left" />
+                            <div class="row">
+                                <div class="col s3 responsive-video">
+                                    <img src="<?= $result['poster'] ?>" alt="" class="responsive-img left" />
                                 </div>
                                 <div class="col s9">
-                                <span class="black-text card-title">
-                                  <?= $result['title'] ?>
-                                </span>
+                                    <span class="black-text card-title">
+                                      <?= $result['title'] ?>
+                                    </span>
+                                    <span class="grey-text truncate"><?= $result['date'] ?></span>
                                 </div>
                               
                             </div>
@@ -176,6 +181,11 @@ $pagetitle = "LSUTV - " . $content['title'];
             var json_url = "<?= $api_url ?>";
             updateVideoInformation(json_url);
             var infotimer = setInterval(function(){ updateVideoInformation(json_url); }, 10000);
+            
+            //Run JS to display channel panes
+            updateChannelList();
+            var channel_timer = setInterval(function(){ updateChannelList(); }, 10000);
+            
         </script>
         <?php } ?>
     </body>
