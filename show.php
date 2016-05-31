@@ -20,12 +20,9 @@ if(!isset($_GET['id'])){
             $pagetitle = "LSUTV - " . $show['title'];
             
             require("components/header.php"); 
-            
-            $tags = ['<p>','</p>','<blockquote>','</blockquoute>'];
-            $desc_no_tags = str_replace($tags, "", $show['description']); 
         ?>
         
-        <meta property="og:description" content="<?= htmlspecialchars($desc_no_tags) ?>" />
+        <meta property="og:description" content="<?= htmlspecialchars($show['description']) ?>" />
         <meta property="og:image" content="<?= $show['poster_url'] ?>" />
     </head>
     <body>
