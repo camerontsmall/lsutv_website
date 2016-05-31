@@ -34,6 +34,7 @@
                     <!-- Dropdown Trigger -->
                     <li><a class="dropdown-button" href="#!" data-activates="more-dropdown">More<i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>
+               
             </div>
             <ul class="side-nav" id="mobile-nav">
                 <li><a href=".">Home</a></li>
@@ -51,4 +52,5 @@
         </div>
 
     </nav>
+     
 </div>
