@@ -23,7 +23,7 @@
         
         <div class="slide-container">
                     <!-- Slider Section -->
-<div class="slider fullscreen">
+<div class="slider fullscreen" id="home-slider">
     <ul class="slides z-depth-1">
       <?php
       //API url for featured videos

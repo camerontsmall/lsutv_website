@@ -18,9 +18,10 @@
         <!-- Desktop nav bar -->
         <div class="nav-wrapper" id="main-nav">
            <div class="container">
-                <a href="." class="brand-logo">
-                    <img src="res/lsutv_white.png" alt="LSUTV Logo" id="tv-logo"  />
-                </a>
+                <div class="brand-logo">
+                    <a href="."><img src="res/lsutv_white.png" alt="LSUTV Logo" id="tv-logo" style="float:left;"/></a>
+                    <i class="material-icons pointer" style="float:left;">arrow_drop_down</i>
+                </div>
                 <a class="hide-on-large-only button-collapse" data-activates="mobile-nav">
                     <i class="material-icons">menu</i>
                 </a>

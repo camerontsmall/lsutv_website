@@ -12,5 +12,11 @@ $config = [
     
     'site_welcome' => 'Welcome to LSUTV',
     
-    'site_description' => "LSUTV is the student television station of Loughborough University and is a part of the LSU Media section."
+    'site_description' => "LSUTV is the student television station of Loughborough University and is a part of the LSU Media section.",
+    
+    /* Site root including trailing slash */
+    'site_root' => 'http://smalldisasters.co.uk/projects/lsutv/',
+    
+    /* Disqus website shortname */
+    'disqus_name' => 'smalldisasters'
 ];

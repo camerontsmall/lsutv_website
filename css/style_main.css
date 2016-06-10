@@ -72,10 +72,13 @@ nav {
   margin-top: 2em; }
 
 #main-content-home {
-  margin-top: 100vh; }
+  margin-top: 50vh; }
+
+#home-slider {
+  height: 50%; }
 
 #slide-container {
-  height: 100vh;
+  height: 50vh;
   overflow: hidden; }
 
 .channel-nowplaying {
