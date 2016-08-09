@@ -2,7 +2,7 @@
 
 $config = [
     /* Absolute path to public.php file. MUST be certified HTTPS for OG embeds to work */
-    'publicphp' => "http://smalldisasters.co.uk/live/admin/public.php",
+    'publicphp' => "http://grovestreet.me/projects/pamphlet_sso/source/admin/public.php",
     
     /* Channel ID to load as fallback */
     'featured_channel' => 11,
@@ -15,7 +15,7 @@ $config = [
     'site_description' => "LSUTV is the student television station of Loughborough University and is a part of the LSU Media section.",
     
     /* Site root including trailing slash */
-    'site_root' => 'http://smalldisasters.co.uk/projects/lsutv/',
+    'site_root' => 'http://grovestreet.me/lsutv/',
     
     /* Disqus website shortname */
     'disqus_name' => 'smalldisasters'
