@@ -39,13 +39,15 @@
                 $api_url_c = $config['publicphp'] . '?action=plugin_videomanager&id=' . $live_channel['id'];
                 //Get array of active channels
                 $live_channel_data = json_decode(file_get_contents($api_url_c),true);
+                
+                $a_name = ($live_channel_data['audioonly'] == true)? 'Listen' : 'Watch';
                 ?>
                 <li>
                   <img src="<?= $live_channel_data['poster'] ?>"> <!-- random image -->
                   <div class="caption center-align">
                       <a href="./video?play=-<?= $live_channel_data['channelID'] ?>">
                           <h3 class="readable"><?= $live_channel_data['title'] ?></h3>
-                          <div class="btn waves-effect red white-text">Live on <?= $live_channel_data['channel_name'] ?></div>
+                          <div class="btn waves-effect red white-text"><?= $a_name ?> live on <?= $live_channel_data['channel_name'] ?></div>
                           <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
                       </a>
                   </div>
