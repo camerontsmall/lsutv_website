@@ -45,7 +45,7 @@
                   <div class="caption center-align">
                       <a href="./video?play=-<?= $live_channel_data['channelID'] ?>">
                           <h3 class="readable"><?= $live_channel_data['title'] ?></h3>
-                          <div class="btn waves-effect red white-text">WATCH LIVE</div>
+                          <div class="btn waves-effect red white-text">Live on <?= $live_channel_data['channel_name'] ?></div>
                           <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
                       </a>
                   </div>
