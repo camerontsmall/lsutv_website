@@ -161,9 +161,9 @@ if(!isset($_GET['id'])){
                     <?php
                     
                     //Dates after start of selected academic year
-                    $after = $ac_year . '-09-01';
+                    $after = $ac_year . '-08-31';
                     //Dates before end of selected academic year
-                    $before = ($ac_year + 1) . '-08-31';
+                    $before = ($ac_year + 1) . '-09-01';
                     //Episode list API URL
                     $api_url_e = $config['publicphp'] . '?action=plugin_vod&tag=' . $show['tag'] . "&after=$after&before=$before";
                     //Episodes array

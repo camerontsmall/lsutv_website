@@ -21,9 +21,10 @@
         
         <div id="nav-bg" class="z-depth-1"></div>
         
+        <?php if($config['enable_slider']){ ?>
         <div class="slide-container">
                     <!-- Slider Section -->
-<div class="slider fullscreen" id="home-slider">
+<div class="slider fullscreen" id="home-slider" style="height:<?= $config['slider_height'] ?>%">
     <ul class="slides z-depth-1">
       <?php
       //API url for featured videos
@@ -51,10 +52,11 @@
     </ul>
   </div>
 <!--End Slider section -->
+        <?php } ?>
     </div>
         
         <!-- Content section -->
-        <main class="container" id="main-content-home">
+        <main class="container" id="main-content-home" style="margin-top:<?= ($config['enable_slider'] == true)? $config['slider_height'] . 'vh' : '2rem' ?>">
             
             <div class="row">
                 <div class="col s12">
