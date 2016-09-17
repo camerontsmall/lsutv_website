@@ -15,7 +15,7 @@ $config = [
     'enable_slider' => true,
     
     /* Slider height in per cent of screen height */
-    'slider_height' => '50',
+    'slider_height' => '80',
     
     'site_welcome' => 'Welcome to LSUTV',
     

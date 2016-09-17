@@ -27,13 +27,41 @@
 <div class="slider fullscreen" id="home-slider" style="height:<?= $config['slider_height'] ?>%">
     <ul class="slides z-depth-1">
       <?php
-      //API url for featured videos
-      $api_url_f = $config['publicphp'] . '?action=plugin_vod&tag=featured&limit=7';
-      //Get array of featured videos
-      $featured = json_decode(file_get_contents($api_url_f), true);
-      //Load featured videos into slider
-      foreach($featured as $result){
-          ?>
+        //API url for finding active channels
+        $api_url_l = $config['publicphp'] . '?action=plugin_videomanager&list';
+        //Get array of active channels
+        $channels = json_decode(file_get_contents($api_url_l),true);
+      
+        if(count($channels) > 0){
+         
+            foreach($channels as $live_channel){
+                //API url for finding active channels
+                $api_url_c = $config['publicphp'] . '?action=plugin_videomanager&id=' . $live_channel['id'];
+                //Get array of active channels
+                $live_channel_data = json_decode(file_get_contents($api_url_c),true);
+                
+                $a_name = ($live_channel_data['audioonly'] == true)? 'Listen' : 'Watch';
+                ?>
+                <li>
+                  <img src="<?= $live_channel_data['poster'] ?>"> <!-- random image -->
+                  <div class="caption center-align">
+                      <a href="./video?play=-<?= $live_channel_data['channelID'] ?>">
+                          <h3 class="readable"><?= $live_channel_data['title'] ?></h3>
+                          <div class="btn waves-effect red white-text"><?= $a_name ?> live on <?= $live_channel_data['channel_name'] ?></div>
+                          <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
+                      </a>
+                  </div>
+                </li>
+                <?php
+            }
+        }
+        //API url for featured videos
+        $api_url_f = $config['publicphp'] . '?action=plugin_vod&tag=featured&limit=7';
+        //Get array of featured videos
+        $featured = json_decode(file_get_contents($api_url_f), true);
+        //Load featured videos into slider
+        foreach($featured as $result){
+            ?>
       <li>
         <img src="<?= $result['poster'] ?>"> <!-- random image -->
         <div class="caption center-align">
