@@ -1,3 +1,16 @@
+<?php
+/* Useful functions */
+
+
+/**
+ * Converts date in YYYY-MM-DD format to a nicer string
+ * @param type $datestring
+ */
+function nice_date($datestring){
+    $timestamp = strtotime($datestring);
+    return date('jS F Y', $timestamp);
+}
+?>
 <!-- Meta fields -->
 <meta charset="UTF-8" />
 <?php $pagetitle = ($pagetitle)? $pagetitle : "LSUTV - Home"; ?>

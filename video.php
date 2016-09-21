@@ -128,13 +128,15 @@ $pagetitle = "LSUTV - " . $content['title'];
                             <a href="./video?play=<?= $result['id'] ?>">
                             <div class="row">
                                 <div class="col s4 responsive-video">
-                                    <img src="<?= $result['poster'] ?>" alt="" class="responsive-img left z-depth-1" />
+                                    <div class="sixteen-nine z-depth-1">
+                                        <img src="<?= $result['poster'] ?>" alt="" class="sixteen-nine-inner left z-depth-1" />
+                                    </div>
                                 </div>
                                 <div class="col s8">
                                     <span class="black-text card-title">
                                       <?= $result['title'] ?>
                                     </span>
-                                    <span class="grey-text truncate"><?= $result['date'] ?></span>
+                                    <span class="grey-text truncate"><?= nice_date($result['date']) ?></span>
                                 </div>
                               
                             </div>
